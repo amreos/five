@@ -1,7 +1,5 @@
 class SessionController < ApplicationController
-
-include SessionHelper
-skip_before_action :require_valid_user!, except: [:logout]
+skip_before_action :require_valid_user!, except: [:destroy]
 
   def create
     reset_session
@@ -10,10 +8,10 @@ skip_before_action :require_valid_user!, except: [:logout]
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
       flash[:success] = 'Succesful login'
-      redirect_to root_path
+      redirect_to user_path(@user)
     else
       flash[:error] = 'Invalid email/password combination'
-      redirect_to login_path
+      redirect_to new_user_path
     end
   end
 

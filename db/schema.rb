@@ -10,7 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_29_044107) do
+ActiveRecord::Schema.define(version: 2018_05_29_223254) do
+
+  create_table "auctions", force: :cascade do |t|
+    t.string "address", null: false
+    t.string "vendor_name", null: false
+    t.string "contact", null: false
+    t.string "email", null: false
+    t.string "property_type", null: false
+    t.string "tenure", null: false
+    t.datetime "auction_date_time", null: false
+    t.string "auction_method", null: false
+    t.decimal "reserve_price", null: false
+    t.decimal "starting_price", null: false
+    t.string "key_features", null: false
+    t.text "property_description", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_auctions_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email"
@@ -19,6 +38,16 @@ ActiveRecord::Schema.define(version: 2018_05_29_044107) do
     t.boolean "verification"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "title"
+    t.date "dob"
+    t.string "postcode"
+    t.string "telephone"
+    t.integer "payment"
+    t.string "company_name"
+    t.string "office_number", default: "0"
+    t.string "address"
   end
 
 end

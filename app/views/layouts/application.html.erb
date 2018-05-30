@@ -22,10 +22,6 @@
             <span></span>
           </div>
 
-          <% if notice %><div class="alert alert-info"><%= notice %></div><% end %> 
-
-          <% if alert %><div class="alert alert-warning"><%= alert %></div><% end %> 
-
           <% if flash %>
           <% flash.each do |message_type, message| %>
           <div class="alert alert-<%= message_type %>"><%= message %></div>

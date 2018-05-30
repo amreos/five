@@ -192,11 +192,11 @@ a, a:link, a:visited, a:hover, a:active{
     list-style-type: none;
 }
 
-.navigation-menu li, .footer-navigation-menu li, .footer-navigation-sn-menu li{
+.navigation-menu li, .footer-navigation-menu li, .footer-navigation-sn-menu li, .profile-navigation li{
     display: inline-block;
 }
 
-.navigation-menu li:not(:last-child), .footer-navigation-menu li:not(:last-child){
+.navigation-menu li:not(:last-child), .footer-navigation-menu li:not(:last-child), .profile-navigation li{
     margin-right: 15px;
 }
 
@@ -204,24 +204,24 @@ a, a:link, a:visited, a:hover, a:active{
     margin-right: 10px;
 }
 
-.navigation-menu a:link, .navigation-menu a:hover, .navigation-menu a:active{
+.navigation-menu a:link, .navigation-menu a:hover, .navigation-menu a:active, .profile-navigation a:link, .profile-navigation a:hover, .profile-navigation a:active{
     text-decoration: none;
 }
 
-.navigation-menu a{
+.navigation-menu a, .profile-navigation a{
     color: #000000;
 }
 
-.navigation-menu a:link{
+.navigation-menu a:link, .profile-navigation a:link{
     color: #000000;
 }
 
-.navigation-menu a:hover{
+.navigation-menu a:hover, .profile-navigation a:hover{
     padding-bottom: 1em;
     border-bottom: 1px solid #EF6C00;
 }
 
-.navigation-menu a:active{
+.navigation-menu a:active, .profile-navigation a:active{
     padding-bottom: 1em;
     border-bottom: 1px solid #EF6C00;
 }
@@ -446,4 +446,37 @@ a, a:link, a:visited, a:hover, a:active{
 
 #company-registration{
     display: none;
+}
+
+/*
+ *Profile
+ */
+.profile-navigation{
+    padding-left: 0;
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  background-color: #000000;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.last-profile-section{
+    padding-bottom: 3em;
+}
+
+.last-profile-section-empty{
+    min-height: 20em;
+}
+
+.profile-button{
+    background-color: #EF6C00;
+    border-color: #EF6C00;
+    color: #FFFFFF;
+}
+
+.profile-header{
+    color: #EF6C00;
 }

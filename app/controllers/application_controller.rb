@@ -15,4 +15,26 @@ class ApplicationController < ActionController::Base
 	    end
 	  end
 
+	  private
+
+	  	#def role_template
+		  #user_role = current_user.has_role? :client ? 'client' : 'operator'
+		 # current_user = User.find(session[:user_id])
+		#	if current_user.agent?
+		#		user_role = "agent"
+		#	elsif current_user.client?
+		#		user_role = "client"
+		#	elsif current_user.admin?
+		#		user_role = "admin"
+		#	end
+		#
+		 # "#{user_role}_#{action_name}"
+		#end
+
+		def role_template
+		 #user_role = current_user.has_role? :client ? 'client' : 'operator'
+		 user_role = current_user.role
+		 "#{user_role}_#{action_name}"
+		end
+
 end
