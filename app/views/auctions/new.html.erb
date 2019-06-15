@@ -15,6 +15,10 @@
                     </div>
                 </div>
             </div>
+
+            <div class="col-md-1 auction-chevron-navigation">
+                <%= render 'chevron_new' %>
+            </div>
             
             <div id="profile-infos" class="col-md-12 last-profile-section">
             <%= form_for @auction, :url => user_auctions_path(current_user.id), :html => {:class => 'form'} do |f| %>
@@ -107,7 +111,7 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <%= f.label :auction_date_time, "Date & Time of Auction" %>
-                            <%= f.text_field :auction_date_time, class:"form-control", placeholder:"Telephone Number*" %>
+                            <%= f.datetime_field :auction_date_time, class:"form-control" %>
                         </div>
                     </div>
 
@@ -152,9 +156,72 @@
                 </div>
 
                 <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <%= f.label :brochure, "Upload Brochure", :class =>"" %>
+                            <%= f.file_field :brochure, {class:"form-control", :style => ""} %>
+                            </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <%= f.label :vendor_id, "Vendor's ID Upload", :class =>"" %>
+                            <%= f.file_field :vendor_id, {class:"form-control", :style => ""} %>
+                        </div>
+                    </div>
+                 
+
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <%= f.label :auction_pack, "Auction Pack Upload", :class =>"" %>
+                            <%= f.file_field :auction_pack, {class:"form-control", :style => ""} %>
+                            </div>
+                    </div>
+
+                </div>
+
+                
+                <%= f.fields_for :photo do |p| %>
+
+                <div class="row">
+
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <%= p.label :main_photo, "Main Photo", :class =>"" %>
+                            <%= p.file_field :main_photo, {class:"form-control", :style => ""} %>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <%= p.label :second_photo, "Second Photo", :class =>"" %>
+                            <%= p.file_field :second_photo, {class:"form-control", :style => ""} %>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <%= p.label :third_photo, "Third Photo", :class =>"" %>
+                            <%= p.file_field :third_photo, {class:"form-control", :style => ""} %>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <%= p.label :fourth_photo, "fourth Photo", :class =>"" %>
+                            <%= p.file_field :fourth_photo, {class:"form-control", :style => ""} %>
+                        </div>
+                    </div>
+
+                </div>
+
+                <% end %>
+
+
+                <div class="row">
                     <div class="col-md-2 col-md-offset-10">
                         <div class="form-group">
-                            <%= f.submit "Save Changes", class:"form-control btn btn-default" %>
+                            <%= f.submit "New Property Auction", class:"form-control btn btn-default" %>
                         </div>
                     </div>
                 </div>

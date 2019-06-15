@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_29_223254) do
+ActiveRecord::Schema.define(version: 2018_06_02_005255) do
 
   create_table "auctions", force: :cascade do |t|
     t.string "address", null: false
@@ -28,7 +28,34 @@ ActiveRecord::Schema.define(version: 2018_05_29_223254) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
+    t.string "brochure"
+    t.string "vendor_id"
+    t.string "auction_pack"
     t.index ["user_id"], name: "index_auctions_on_user_id"
+  end
+
+  create_table "identities", force: :cascade do |t|
+    t.string "name"
+    t.string "adress"
+    t.date "dob"
+    t.string "id_number"
+    t.string "document"
+    t.string "address_proof"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_identities_on_user_id"
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.string "main_photo", null: false
+    t.string "second_photo"
+    t.string "third_photo"
+    t.string "fourth_photo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "auction_id"
+    t.index ["auction_id"], name: "index_photos_on_auction_id"
   end
 
   create_table "users", force: :cascade do |t|
